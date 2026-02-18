@@ -183,6 +183,10 @@ docker logs web
 # Detener y eliminar
 docker stop web
 docker rm web
+
+# Es el uso más básico. Puedes montar tus archivos HTML, CSS y JS en el directorio 
+/usr/share/nginx/html 
+#del contenedor para servir una página web o una aplicación frontend 
 ```
 
 ### Ejemplo 2: Base de Datos MySQL
