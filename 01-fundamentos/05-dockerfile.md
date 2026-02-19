@@ -273,7 +273,20 @@ docker ps
 # STATUS: Up 2 minutes (unhealthy)
 
 # historial detallado
-docker inspect <container_id> | grep Health -A 20  
+docker inspect <container_id> | grep Health -A 20
+
+# El healthcheck no reinicia el contenedor solo.
+# Solo cambia su estado a healthy o unhealthy.
+# Para que se reinicie automáticamente necesitas combinarlo con:
+
+docker run --restart=on-failure mi-web-python:v0.1
+
+# O en docker-compose:
+services:
+  web:
+    image: mi-web-python:v0.1
+    restart: on-failure
+
 ```
 
 ---
