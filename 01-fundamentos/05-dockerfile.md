@@ -266,6 +266,14 @@ docker build --no-cache -t mi-app .
 
 # Ver progreso detallado
 docker build --progress=plain -t mi-app .
+
+# Ver el estado
+docker ps
+# STATUS: Up 2 minutes (healthy)
+# STATUS: Up 2 minutes (unhealthy)
+
+# historial detallado
+docker inspect <container_id> | grep Health -A 20  
 ```
 
 ---
